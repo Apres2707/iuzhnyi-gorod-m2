@@ -1,0 +1,33 @@
+{
+  "name": "Южный город, цена за м2",
+  "description": "Подсчёт стоимости квадратного метра жилья для сайта Южного города",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "tabs",
+    "scripting"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "/images/icon_16.png",
+      "24": "/images/icon_24.png",
+      "43": "/images/icon_32.png",
+      "48": "/images/icon_48.png",
+      "128": "/images/icon_128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/icon_16.png",
+    "24": "/images/icon_24.png",
+    "43": "/images/icon_32.png",
+    "48": "/images/icon_48.png",
+    "128": "/images/icon_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "*://southerncity.ru/choose/params/flat-*" ],
+      "js": [ "background.js" ],
+      "run_at": "document_end"
+    }
+  ]
+}
