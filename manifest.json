@@ -7,6 +7,9 @@
     "tabs",
     "scripting"
   ],
+  "host_permissions": [
+    "https://southerncity.ru/*"
+  ],
   "action": {
     "default_icon": {
       "16": "/images/icon_16.png",
@@ -26,7 +29,17 @@
   "content_scripts": [
     {
       "matches": [ "*://southerncity.ru/choose/params/flat-*" ],
-      "js": [ "background.js" ],
+      "js": [ "ditail.js" ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [ "*://southerncity.ru/choose/params/type-*" ],
+      "js": [ "list_of_type.js" ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [ "*://southerncity.ru/choose/params/?type*", "https://southerncity.ru/choose/params/favorites/*" ],
+      "js": [ "list.js" ],
       "run_at": "document_end"
     }
   ]

@@ -1,4 +1,3 @@
-console.log("page load!");
 function calculatePrice() {
         let textPrice = document.getElementsByClassName("_action").item(0).innerHTML.replace(/&nbsp;/g, '').replace(/ ₽/g, '');
         let price = parseInt(textPrice, 10);
@@ -12,7 +11,7 @@ function calculatePrice() {
 
         let newPriceNameDiv = document.createElement("div");
         newPriceNameDiv.classList.add("FlatPrice_lbl")
-        newPriceNameDiv.innerHTML = "Цена за м2:"
+        newPriceNameDiv.innerHTML = "Цена за м<sup>2</sup>:"
 
         let newPriceValDiv = document.createElement("div");
         newPriceValDiv.classList.add("FlatPrice_val", "_action")
@@ -26,4 +25,5 @@ function calculatePrice() {
 
         prevDiv.insertAdjacentElement('afterend', newPriceRowDiv);
 }
+
 calculatePrice()
